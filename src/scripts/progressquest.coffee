@@ -5,7 +5,7 @@
 #   hubot pg - return the progress quest info
 
 module.exports = (robot) ->
-	robot.respond /(progress quest|pg)$/i, (msg) ->
+	robot.respond /(progress quest|pq)$/i, (msg) ->
 		q = {gid: "18261"}
 		msg.http('http://progressquest.com/pemptus.php').query(q).get() (err, res, body) ->
 			regex = ///
