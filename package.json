@@ -1,6 +1,6 @@
 {
   "name":        "balibot-scripts",
-  "version":     "1.0.0",
+  "version":     "1.0.1",
   "author":      "balihoo",
   "keywords":    "hubot plugin scripts for balihoo",
   "description": "Allows you to opt in to a variety of scripts",
