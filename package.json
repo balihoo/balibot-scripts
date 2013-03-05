@@ -1,0 +1,20 @@
+{
+  "name":        "balibot-scripts",
+  "version":     "2.4.1",
+  "author":      "balihoo",
+  "keywords":    "hubot plugin scripts for balihoo",
+  "description": "Allows you to opt in to a variety of scripts",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/drdamour/balibot-scripts.git"
+  },
+
+  "dependencies": {
+    "hubot": ">= 2.4.0"
+  },
+
+  "directories":  {
+    "lib": "./src"
+  },
+  "engine": "node >= 0.8.x"
+}
