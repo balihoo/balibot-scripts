@@ -2,10 +2,10 @@
 #   Utility commands surrounding progrss quest stats.
 #
 # Commands:
-#   hubot pg - return the progress quest info
+#   hubot pg|pq|progressquest - return the progress quest info
 
 module.exports = (robot) ->
-	robot.respond /(progress quest|pq)$/i, (msg) ->
+	robot.respond /(progress ?quest|pq|pg)$/i, (msg) ->
 		q = {gid: "18261"}
 		msg.http('http://progressquest.com/pemptus.php').query(q).get() (err, res, body) ->
 			regex = ///
