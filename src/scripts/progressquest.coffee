@@ -4,6 +4,8 @@
 # Commands:
 #   hubot pg|pq|progressquest - return the progress quest info
 
+roman = require("roman");
+
 module.exports = (robot) ->
 	robot.respond /(progress ?quest|pq|pg)$/i, (msg) ->
 		q = {gid: "18261"}
@@ -35,7 +37,7 @@ module.exports = (robot) ->
 			<td>(.{3}?)\s+(\d+?)	#prime stat
 			<td>Act\s(.+?)			#plot stage/act
 			<td>(.+?)				#prized item
-			<td>(.+?)				#specialty
+			<td>(.+?)\s([CXLVI]+?)	#specialty/level
 			<td>(.*?)				#motto
 			<td><a\shref="guilds.php\?id=18261
 			///
@@ -51,12 +53,19 @@ module.exports = (robot) ->
 				act : sm[7]
 				item : sm[8]
 				specialty : sm[9]
-				motto : sm[10]
+				specialtylevel : sm[10]
+				motto : sm[11]
 			
+
 			#sort by stat
 			characters.sort (a,b) ->
 				b.statval - a.statval
 			highstat = characters[0]
+
+			#sort by specialty level
+			characters.sort (a,b) ->
+				roman.roman2decimal(b.specialtylevel) - roman.roman2decimal(a.specialtylevel)
+			highskill = characters[0]
 
 			#sort by rank for table
 			characters.sort (a,b) ->
@@ -65,8 +74,8 @@ module.exports = (robot) ->
 			clan = "Balihoo Developers"
 			msg.send "#{leader.name}, the leader of clan #{clan} shouts \"#{leader.motto}\" while waving his #{leader.item}"
 			msg.send "#{highstat.name} has the highest stat of #{highstat.statval} for #{highstat.stat}"
-			msg.send ""
-			msg.send "Top 10 of clan #{clan}:"
+			msg.send "#{highskill.name} has the highest leveled specialty, #{highskill.specialty} #{highskill.specialtylevel}"
+			msg.send "Top 10 of clan #{clan} by level:"
 			msg.send "#{c.rank} - #{c.name} at Level #{c.level}" for c in characters
 			msg.send "reference: http://progressquest.com/pemptus.php?gid=18261"
 

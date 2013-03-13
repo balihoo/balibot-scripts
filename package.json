@@ -10,7 +10,8 @@
   },
 
   "dependencies": {
-    "hubot": ">= 2.4.0"
+    "hubot": ">= 2.4.0",
+    "roman": ">=0.0.1"
   },
 
   "directories":  {
