@@ -37,7 +37,7 @@ module.exports = (robot) ->
 			<td>(.{3}?)\s+(\d+?)	#prime stat
 			<td>Act\s(.+?)			#plot stage/act
 			<td>(.+?)				#prized item
-			<td>(.+?)\s([CXLVI]+?)	#specialty/level
+			<td>(.+?)\s([MDCXLVI]+?)	#specialty/level
 			<td>(.*?)				#motto
 			<td><a\shref="guilds.php\?id=18261
 			///
