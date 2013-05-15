@@ -49,7 +49,7 @@ module.exports = (robot) ->
 							Correct.push PuzzleData
 
 							if WithDetails
-								msg.send "An Correct Puzzle Answer was Received"
+								msg.send "A Correct Puzzle Answer was Received"
 								SendPuzzleData msg, PuzzleData
 
 						else
