@@ -10,8 +10,12 @@
   },
 
   "dependencies": {
-    "hubot": ">= 2.4.0",
-    "roman": ">=0.0.1"
+    "roman": ">=0.0.1",
+    "permcomb": ">=0.0.1"
+  },
+
+  "devDependencies": {
+    "hubot": ">= 2.4.0"
   },
 
   "directories":  {
