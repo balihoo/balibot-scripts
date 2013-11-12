@@ -72,12 +72,17 @@ module.exports = (robot) ->
 				a.rank - b.rank
 			leader = characters[0]
 			clan = "Balihoo Developers"
-			msg.send "#{leader.name}, the leader of clan #{clan} shouts \"#{leader.motto}\" while waving his #{leader.item}"
-			msg.send "#{highstat.name} has the highest stat of #{highstat.statval} for #{highstat.stat}"
-			msg.send "#{highskill.name} has the highest leveled specialty, #{highskill.specialty} #{highskill.specialtylevel}"
-			msg.send "Top 10 of clan #{clan} by level:"
-			msg.send "#{c.rank} - #{c.name} at Level #{c.level}" for c in characters
-			msg.send "reference: http://progressquest.com/pemptus.php?gid=18261"
+			message = "#{leader.name}, the leader of clan #{clan} shouts \"#{leader.motto}\" while waving his #{leader.item}"
+			message += "\n"
+			message += "#{highstat.name} has the highest stat of #{highstat.statval} for #{highstat.stat}"
+			message += "\n"
+			message += "#{highskill.name} has the highest leveled specialty, #{highskill.specialty} #{highskill.specialtylevel}"
+			message += "\n"
+			message += "Top 10 of clan #{clan} by level:"
+			message += "\n"
+			message += "#{c.rank} - #{c.name} the #{c.race} is at Level #{c.level}\n" for c in characters
+			message += "reference: http://progressquest.com/pemptus.php?gid=18261"
+			msg.send message
 
 
 			
